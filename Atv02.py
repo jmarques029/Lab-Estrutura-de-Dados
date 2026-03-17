@@ -11,18 +11,6 @@ class SingleLinkedList:
         self.size = 0         # Tamanho da lista
 
     def append(self, data):
-
-        new_node = Node(data)         
-
-        if self.head is None:          
-            self.head = new_node      
-            self.tail = new_node
-        else:
-            self.tail.next = new_node  
-            self.tail = new_node      
-
-        self.size += 1                 
-
         """
         Adiciona um novo nó (Node) ao final da lista encadeada.
 
@@ -48,9 +36,39 @@ class SingleLinkedList:
             lista.append(30)   # head=10, tail=30
             print(lista)       # "10 -> 20 -> 30"
         """
-        # SEU CÓDIGO AQUI.
+        new_node = Node(data)         
+
+        if self.head is None:          
+            self.head = new_node      
+            self.tail = new_node
+        else:
+            self.tail.next = new_node  
+            self.tail = new_node      
+
+        self.size += 1                 
+
+
 
     def insert(self, index, data):
+          """
+         Insere um novo nó na posição desejada (base 0) da lista.
+
+        Objetivo:
+            - Criar um novo nó contendo o valor fornecido.
+            - Inserir esse nó na posição indicada pelo índice.
+            - Atualizar os ponteiros necessários e o contador `size`.
+            - A explicação dos detalhes foi dada na aula passada.
+            - Não esquecer de verificar se a lista está vazia e tratar de acordo.
+
+        Exemplo esperado:
+            lista = SingleLinkedList()
+            lista.append(5)
+            lista.append(23)
+            lista.append(7)
+            lista.insert(1, 11)   # Insere o 11 na posição 1
+            print(lista)          # "5 -> 11 -> 23 -> 7"
+        """
+       # SEU CÓDIGO AQUI.
         new_node = Node(data)         
 
         if index == 0:                 
@@ -69,25 +87,8 @@ class SingleLinkedList:
                 self.tail = new_node
 
         self.size += 1    
-        """
-        Insere um novo nó na posição desejada (base 0) da lista.
+     
 
-        Objetivo:
-            - Criar um novo nó contendo o valor fornecido.
-            - Inserir esse nó na posição indicada pelo índice.
-            - Atualizar os ponteiros necessários e o contador `size`.
-            - A explicação dos detalhes foi dada na aula passada.
-            - Não esquecer de verificar se a lista está vazia e tratar de acordo.
-
-        Exemplo esperado:
-            lista = SingleLinkedList()
-            lista.append(5)
-            lista.append(23)
-            lista.append(7)
-            lista.insert(1, 11)   # Insere o 11 na posição 1
-            print(lista)          # "5 -> 11 -> 23 -> 7"
-        """
-       # SEU CÓDIGO AQUI.
 
     def __str__(self):
         """
