@@ -63,7 +63,7 @@ class QueueUsingStacks:
         return "\n↓\n".join(str(x) for x in result)
 
 
-# Testando a fila
+# Testando a fila   
 if __name__ == "__main__":
     fila = QueueUsingStacks()
 
